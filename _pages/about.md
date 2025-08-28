@@ -16,7 +16,7 @@ My research interests focus on autonomous robotics, particularly in the area of 
 
 News
 =====
-- 2025.7 One paper is submitted to MRS2025.
+- 2025.7: One paper is submitted to MRS2025.
 
 <!-- A data-driven personal website
 ======
