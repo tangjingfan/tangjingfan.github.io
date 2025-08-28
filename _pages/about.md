@@ -10,7 +10,9 @@ redirect_from:
 About me
 =====
 
-My research interests focus on autonomous robotics, particularly in the area of exploration. I concentrate on abstracting mathematical problems from robotic tasks, optimizing task allocation and execution while ensuring theoretical soundness. I validate the effectiveness of my methods through simulation and further deploy them on physical robots. I am fortunate to be advised by [Dr. Zhongqiang Ren](https://rap-lab.github.io/team/zren/), [Dr. Shizhe Zhao](https://eggeek.github.io/) and [Mr. Chao Cao](https://caochao.me/).
+I am a junior student at Shanghai Jiao Tong University, majoring in Electrical & Computer Engineering. I am working at [rap lab](p-lab.github.io), advised by [Dr. Zhongqiang Ren](https://rap-lab.github.io/team/zren/), [Dr. Shizhe Zhao](https://eggeek.github.io/) and [Mr. Chao Cao](https://caochao.me/).
+
+My research interests focus on autonomous robotics, particularly in the area of exploration. I concentrate on abstracting mathematical problems from robotic tasks, optimizing task allocation and execution while ensuring theoretical soundness. I validate the effectiveness of my methods through simulation and further deploy them on physical robots. 
 
 <!-- A data-driven personal website
 ======
