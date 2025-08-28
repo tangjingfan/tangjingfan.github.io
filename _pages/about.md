@@ -10,9 +10,7 @@ redirect_from:
 About me
 =====
 
-This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. Incidentally, these same features make it a great template for anyone that needs to show off a professional template!
-
- You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and Markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
+My research interests focus on autonomous robotics, particularly in the area of exploration. I concentrate on abstracting mathematical problems from robotic tasks, optimizing task allocation and execution while ensuring theoretical soundness. I validate the effectiveness of my methods through simulation and further deploy them on physical robots. I am fortunate to be advised by [Dr. Zhongqiang Ren](https://rap-lab.github.io/team/zren/), [Dr. Shizhe Zhao](https://eggeek.github.io/) and [Mr. Chao Cao](https://caochao.me/).
 
 A data-driven personal website
 ======
