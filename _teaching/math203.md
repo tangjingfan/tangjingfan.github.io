@@ -1,5 +1,5 @@
 ---
-title: "Teaching Assistant for MATH2030J"
+title: "Teaching Assistant for MATH2030J Discrete Mathematics"
 collection: teaching
 type: "Undergraduate course"
 permalink: /teaching/math203
