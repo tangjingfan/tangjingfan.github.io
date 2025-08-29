@@ -33,11 +33,29 @@
   "work": [],
   "education": [
     {
-      "institution": "Shanghai Jiao Tong University",
-      "area": "B.Eng. in Electrical & Computer Engineering",
+      "institution": "GitHub University",
+      "area": "Ph.D in Version Control Theory",
       "studyType": "",
       "startDate": "",
-      "endDate": "Expected 2027",
+      "endDate": "2018",
+      "gpa": null,
+      "courses": []
+    },
+    {
+      "institution": "GitHub University",
+      "area": "M.S. in Jekyll",
+      "studyType": "",
+      "startDate": "",
+      "endDate": "2014",
+      "gpa": null,
+      "courses": []
+    },
+    {
+      "institution": "GitHub University",
+      "area": "B.S. in GitHub",
+      "studyType": "",
+      "startDate": "",
+      "endDate": "2012",
       "gpa": null,
       "courses": []
     }
