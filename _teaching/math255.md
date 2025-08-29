@@ -4,7 +4,7 @@ collection: teaching
 type: "Undergraduate course"
 permalink: /teaching/math255
 venue: "UM-SJTU Joint Institute, Shanghai Jiao Tong University"
-date: 2024-05-12
+date: 2025-05-12
 location: "Shanghai, China"
 ---
 
