@@ -8,7 +8,7 @@ date: 2025-07-09
 submission: 'IEEE International Symposium on Multi-Robot & Multi-Agent Systems (MRS)'
 # venue: 'MRS'
 # paperurl: 'http://academicpages.github.io/files/paper3.pdf'
-# citation: 'Your Name, You. (2024). &quot;Paper Title Number 3.&quot; <i>GitHub Journal of Bugs</i>. 1(3).'
+citation: 'Longrui Yang, Yiyu Wang, **Jingfan Tang**. (2024). &quot;Paper Title Number 3.&quot; <i>GitHub Journal of Bugs</i>. 1(3).'
 ---
 
 We leverage a hierarchical method that decompose the exploration into global planning and local planning. We propose a new routing algorithm PEAF (Partial Anytime Focal search) that can quickly find bounded sub-optimal solutions to minimize the maximum path
