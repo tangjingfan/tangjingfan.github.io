@@ -2,12 +2,15 @@
 title: "HEHA: Hierarchical Planning for Heterogeneous Multi-Robot Exploration of Unknown Environments"
 collection: publications
 category: conferences
+# category: manuscripts
 permalink: /publication/HEHA
 excerpt: 'This paper considers the path planning problem for autonomous exploration of an unknown environment using multiple heterogeneous robots such as drones, wheeled, and legged robots, which have different capabilities to traverse complex terrains.'
 date: 2025-07-09
 submission: 'IEEE International Symposium on Multi-Robot & Multi-Agent Systems (MRS)'
 # venue: 'MRS'
 # paperurl: 'http://academicpages.github.io/files/paper3.pdf'
+# slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
+# bibtexurl: 'http://academicpages.github.io/files/bibtex1.bib'
 citation: 'Longrui Yang<sup>†</sup>, Yiyu Wang<sup>†</sup>, <b>Jingfan Tang</b><sup>†</sup>, Yunpeng Lv, Shizhe Zhao, Chao Cao, Zhongqiang Ren<sup>*</sup>. (2025). &quot;HEHA: Hierarchical Planning for Heterogeneous Multi-Robot Exploration of Unknown Environments.&quot;'
 ---
 
