@@ -12,4 +12,4 @@ citation: 'Longrui Yang<sup>†</sup>, Yiyu Wang<sup>†</sup>, <b>Jingfan Tang<
 ---
 
 We leverage a hierarchical method that decompose the exploration into global planning and local planning. We propose a new routing algorithm PEAF (Partial Anytime Focal search) that can quickly find bounded sub-optimal solutions to minimize the maximum path
-length among the agents subject to traversability constraints. Additionally, the local planner in HEHA also considers heterogeneity to avoid repeated and duplicated exploration among the robots. The experimental results show that, our HEHA can reduce up to 30% of the exploration time than the baselines
+length among the agents subject to traversability constraints. Additionally, the local planner in HEHA also considers heterogeneity to avoid repeated and duplicated exploration among the robots. The experimental results show that, our HEHA can reduce up to 30% of the exploration time than the baselines.
