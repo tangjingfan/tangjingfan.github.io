@@ -34,7 +34,7 @@ layout: default
           {% if page.submission and page.venue %}
             <p class="page__date">
               <strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i>
-                Submitted to <i>{{ page.submission }}</i>, {{ page.modified | date: "%Y" }}
+                Submitted to <i>{{ page.submission }}</i>, {{ page.date | date: "%Y" }}
               </strong>
             </p>
             <p class="page__date">
@@ -45,7 +45,7 @@ layout: default
           {% elsif page.submission %}
             <p class="page__date">
               <strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i>
-                Submitted to <i>{{ page.submission }}</i>, {{ page.modified | date: "%Y" }}
+                Submitted to <i>{{ page.submission }}</i>, {{ page.date | date: "%Y" }}
               </strong>
             </p>
           {% elsif page.venue %}
@@ -65,7 +65,7 @@ layout: default
           {% if page.submission and page.venue %}
             <p class="page__date">
               <strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i>
-                Submitted to <i>{{ page.submission }}</i>, {{ page.modified | date: "%Y" }}
+                Submitted to <i>{{ page.submission }}</i>, {{ page.date | date: "%Y" }}
               </strong>
             </p>
             <p class="page__date">
@@ -76,7 +76,7 @@ layout: default
           {% elsif page.submission %}
             <p class="page__date">
               <strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i>
-                Submitted to <i>{{ page.submission }}</i>, {{ page.modified | date: "%Y" }}
+                Submitted to <i>{{ page.submission }}</i>, {{ page.date | date: "%Y" }}
               </strong>
             </p>
           {% elsif page.venue %}
