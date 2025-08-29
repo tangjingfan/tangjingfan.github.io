@@ -1,20 +1,11 @@
 ---
-title: "Teaching experience 1"
+title: "Teaching Assistant for MATH2030J"
 collection: teaching
 type: "Undergraduate course"
 permalink: /teaching/math203
 venue: "UM-SJTU Joint Institute, Shanghai Jiao Tong University"
-date: 2024-09-10
+date: 2024-09-16
 location: "Shanghai, China"
 ---
 
-This is a description of a teaching experience. You can use markdown like any other post.
-
-Heading 1
-======
-
-Heading 2
-======
-
-Heading 3
-======
+Teaching Assistant for MATH2030J: Held office hours and recitation sessions, and assisted with grading homework and exams.
