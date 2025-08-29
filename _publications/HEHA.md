@@ -1,5 +1,5 @@
 ---
-title: "HEHA: ierarchical Planning for Heterogeneous Multi-Robot Exploration of Unknown Environments"
+title: "HEHA: Hierarchical Planning for Heterogeneous Multi-Robot Exploration of Unknown Environments"
 collection: publications
 category: conferences
 permalink: /publication/HEHA
