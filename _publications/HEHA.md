@@ -8,7 +8,7 @@ date: 2025-07-09
 submission: 'IEEE International Symposium on Multi-Robot & Multi-Agent Systems (MRS)'
 # venue: 'MRS'
 # paperurl: 'http://academicpages.github.io/files/paper3.pdf'
-citation: 'Longrui Yang<sup>†</sup>, Yiyu Wang<sup>†</sup>, <b>Jingfan Tang</b><sup>†</sup>. (2025). &quot;HEHA: Hierarchical Planning for Heterogeneous Multi-Robot Exploration of Unknown Environments.&quot;'
+citation: 'Longrui Yang<sup>†</sup>, Yiyu Wang<sup>†</sup>, <b>Jingfan Tang</b><sup>†</sup>, Yunpeng Lv, Shizhe Zhao, Chao Cao, Zhongqiang Ren<sup>*</sup>. (2025). &quot;HEHA: Hierarchical Planning for Heterogeneous Multi-Robot Exploration of Unknown Environments.&quot;'
 ---
 
 We leverage a hierarchical method that decompose the exploration into global planning and local planning. We propose a new routing algorithm PEAF (Partial Anytime Focal search) that can quickly find bounded sub-optimal solutions to minimize the maximum path
