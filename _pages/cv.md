@@ -57,6 +57,10 @@ Teaching
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
+Award
+=====
+* Yu Liming Scholarship (Top 4%), 2024
+
 Service and leadership
 ======
 * Leader and Advisor of UM-SJTU JI Advising Center
