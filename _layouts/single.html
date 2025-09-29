@@ -51,12 +51,7 @@ layout: default
         {% elsif page.venue and page.date %}
           <p>Published in <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif page.date %}
-          {% if page.submission and page.venue %}
-            <p class="page__date">
-              <strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i>
-                Submitted to <i>{{ page.submission }}</i>, {{ page.date | date: "%Y" }}
-              </strong>
-            </p>
+          {% if page.venue %}
             <p class="page__date">
               <strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i>
                 Published in <i>{{ page.venue }}</i>, {{ page.date | date: "%Y" }}
@@ -66,12 +61,6 @@ layout: default
             <p class="page__date">
               <strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i>
                 Submitted to <i>{{ page.submission }}</i>, {{ page.date | date: "%Y" }}
-              </strong>
-            </p>
-          {% elsif page.venue %}
-            <p class="page__date">
-              <strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i>
-                Published in <i>{{ page.venue }}</i>, {{ page.date | date: "%Y" }}
               </strong>
             </p>
           {% endif %}
