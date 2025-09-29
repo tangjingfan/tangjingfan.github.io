@@ -44,7 +44,7 @@
           {% if post.submission %}
             <p>Submitted to <i>{{ post.submission }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
           {% elsif post.venue %}
-            <p>Published 555 in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
+            <p>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
           {% endif %}
         {% elsif post.date %}
          {% if page.submission and page.venue %}
@@ -55,7 +55,7 @@
             </p>
             <p class="page__date">
               <strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i>
-                Published 222 in <i>{{ page.venue }}</i>, {{ page.date | date: "%Y" }}
+                Published in <i>{{ page.venue }}</i>, {{ page.date | date: "%Y" }}
               </strong>
             </p>
           {% elsif page.submission %}
@@ -67,7 +67,7 @@
           {% elsif page.venue %}
             <p class="page__date">
               <strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i>
-                Published 333 in <i>{{ page.venue }}</i>, {{ page.date | date: "%Y" }}
+                Published in <i>{{ page.venue }}</i>, {{ page.date | date: "%Y" }}
               </strong>
             </p>
           {% endif %}
