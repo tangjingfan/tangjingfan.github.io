@@ -7,7 +7,7 @@ permalink: /publication/HEHA
 excerpt: 'This paper considers the path planning problem for autonomous exploration of an unknown environment using multiple heterogeneous robots such as drones, wheeled, and legged robots, which have different capabilities to traverse complex terrains.'
 date: 2025-07-09
 # venue: 'MRS'
-venue: ' IEEE Transactions on Robotics (T-RO)'
+submission: ' IEEE Transactions on Robotics (T-RO)'
 # venue: 'MRS'
 # paperurl: 'http://academicpages.github.io/files/paper3.pdf'
 # slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
