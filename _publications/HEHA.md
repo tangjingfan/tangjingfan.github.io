@@ -9,7 +9,7 @@ date: 2025-07-09
 # venue: 'MRS'
 submission: ' IEEE Transactions on Robotics (T-RO)'
 # venue: 'MRS'
-# paperurl: 'http://academicpages.github.io/files/paper3.pdf'
+paperurl: 'https://arxiv.org/abs/2510.04161'
 # slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
 # bibtexurl: 'http://academicpages.github.io/files/bibtex1.bib'
 citation: 'Longrui Yang<sup>†</sup>, Yiyu Wang<sup>†</sup>, <b>Jingfan Tang</b><sup>†</sup>, Yunpeng Lv, Shizhe Zhao, Chao Cao, Zhongqiang Ren<sup>*</sup>. (2025). &quot;HEHA: Hierarchical Planning for Heterogeneous Multi-Robot Exploration of Unknown Environments.&quot;'
