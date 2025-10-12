@@ -16,7 +16,8 @@ My research interests focus on autonomous robotics, particularly in the area of 
 
 News
 =====
-- 2025.10: One paper is released on Arxiv.
+- [2025.10] One paper is released on Arxiv.
+- [2025.10] I will be on an exchange in Carnegie Mellon University in 2026 Spring! See you in Pittsburgh. 
 
 <!-- A data-driven personal website
 ======
