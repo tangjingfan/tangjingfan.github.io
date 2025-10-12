@@ -22,7 +22,7 @@ repository               : "tangjingfan/tangjingfan.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "jingfan.png"
+  avatar           : "jingfan.jpg"
   name             : "Jingfan Tang"
   pronouns         : # example: "she/her"  
   bio              : "Undergraduate student at<br>Shanghai Jiao Tong University."
