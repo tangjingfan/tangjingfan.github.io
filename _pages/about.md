@@ -18,6 +18,7 @@ News
 =====
 - [2025.10] One paper is released on Arxiv.
 - [2025.10] I will be on an exchange in Carnegie Mellon University in 2026 Spring! See you in Pittsburgh. 
+- [2025.9] Our paper HEHA is accepted to MRS2025!
 
 <!-- A data-driven personal website
 ======
