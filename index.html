@@ -128,17 +128,28 @@
                   <td style="padding: 16px; width: 20%; vertical-align: middle">
                     <div class="one">
                       <div class="two" id="pelp_image">
-                        <img src="images/pelp.jpg" width="100%" />
+                        <video id="pelp_video" width="100%" muted loop playsinline preload="metadata">
+                          <source src="images/pelp_real.mp4" type="video/mp4" />
+                        </video>
                       </div>
-                      <img src="images/pelp.jpg" width="100%" />
+                      <video width="100%" muted loop playsinline autoplay preload="metadata">
+                        <source src="images/pelp_real.mp4" type="video/mp4" />
+                      </video>
                     </div>
                     <script type="text/javascript">
                       function pelp_start() {
-                        document.getElementById('pelp_image').style.opacity = '1';
+                        const container = document.getElementById('pelp_image');
+                        const video = document.getElementById('pelp_video');
+                        container.style.opacity = '1';
+                        video.play();
                       }
 
                       function pelp_stop() {
-                        document.getElementById('pelp_image').style.opacity = '0';
+                        const container = document.getElementById('pelp_image');
+                        const video = document.getElementById('pelp_video');
+                        container.style.opacity = '0';
+                        video.pause();
+                        video.currentTime = 0;
                       }
                       pelp_stop();
                     </script>
