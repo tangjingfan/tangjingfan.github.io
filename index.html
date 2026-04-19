@@ -132,7 +132,7 @@
               "
             >
               <tbody>
-                <tr onmouseout="pelp_stop()" onmouseover="pelp_start()" bgcolor="#ffffd0">
+                <tr onmouseout="apex_stop()" onmouseover="apex_start()" bgcolor="#ffffd0">
                   <td style="padding: 16px; width: 20%; vertical-align: middle">
                     <div class="one" style="margin-top: 20px">
                       <div class="two" id="pelp_image">
@@ -144,48 +144,49 @@
                           playsinline
                           preload="metadata"
                         >
-                          <source src="images/pelp_real.mp4" type="video/mp4" />
+                          <source src="images/apex_real.mp4" type="video/mp4" />
                         </video>
                       </div>
                       <video width="100%" muted loop playsinline autoplay preload="metadata">
-                        <source src="images/pelp_real.mp4" type="video/mp4" />
+                        <source src="images/apex_real.mp4" type="video/mp4" />
                       </video>
                     </div>
                     <script type="text/javascript">
-                      function pelp_start() {
+                      function apex_start() {
                         const container = document.getElementById('pelp_image');
                         const video = document.getElementById('pelp_video');
                         container.style.opacity = '1';
                         video.play();
                       }
 
-                      function pelp_stop() {
+                      function apex_stop() {
                         const container = document.getElementById('pelp_image');
                         container.style.opacity = '0';
                       }
-                      pelp_stop();
+                      apex_stop();
                     </script>
                   </td>
                   <td style="padding: 8px; width: 80%; vertical-align: middle">
                     <a>
                       <span class="papertitle"
-                        >PELP: Probabilistic Planning for Autonomous Exploration with Learning-Based
-                        Prediction</span
+                        >APEX: Adaptive Prediction and Probabilistic Planning for Lifelong
+                        Autonomous Exploration</span
                       >
                     </a>
                     <br />
-                    <strong>Jingfan Tang</strong>, <a>Ruizhi Deng</a>, <a>Yunpeng Lyu</a>,
-                    <a href="https://eggeek.github.io/">Shizhe Zhao</a>,
+                    <strong>Jingfan Tang</strong>, <a>Ruizhi Deng</a>, <a>Zishan Liu</a>,
+                    <a>Yunpeng Lyu</a>, <a href="https://eggeek.github.io/">Shizhe Zhao</a>,
                     <a href="https://rap-lab.github.io/team/zren">Zhongqiang Ren</a>
                     <br />
-                    <em>In submission to RSS</em>, 2026
+                    <em>Ongoing Project</em>, 2026
                     <br />
                     <a>paper to be released</a>
                     <p></p>
                     <p>
                       Introducing new probabilistic routing problems to model uncertainty in map
                       prediction and developing optimal and bounded suboptimal search-based
-                      algorithms to solve the problems.
+                      algorithms to solve the problems. <br />
+                      Developing modular framework integrating learning and planning.
                     </p>
                   </td>
                 </tr>
