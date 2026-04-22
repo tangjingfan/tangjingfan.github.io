@@ -207,7 +207,9 @@
                           <source src="images/heha_real.mp4" type="video/mp4" />
                         </video>
                       </div>
-                      <img src="images/heha.png" width="100%" />
+                      <video width="100%" muted loop playsinline autoplay preload="metadata">
+                        <source src="images/heha_real.mp4" type="video/mp4" />
+                      </video>
                     </div>
                     <script type="text/javascript">
                       function heha_start() {
@@ -219,10 +221,7 @@
 
                       function heha_stop() {
                         const container = document.getElementById('heha_image');
-                        const video = document.getElementById('heha_video');
                         container.style.opacity = '0';
-                        video.pause();
-                        video.currentTime = 0;
                       }
                       heha_stop();
                     </script>
