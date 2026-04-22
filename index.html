@@ -196,17 +196,33 @@
                   <td style="padding: 16px; width: 20%; vertical-align: middle">
                     <div class="one">
                       <div class="two" id="heha_image">
-                        <img src="images/heha.png" width="100%" />
+                        <video
+                          id="heha_video"
+                          width="100%"
+                          muted
+                          loop
+                          playsinline
+                          preload="metadata"
+                        >
+                          <source src="images/heha_real.mp4" type="video/mp4" />
+                        </video>
                       </div>
                       <img src="images/heha.png" width="100%" />
                     </div>
                     <script type="text/javascript">
                       function heha_start() {
-                        document.getElementById('heha_image').style.opacity = '1';
+                        const container = document.getElementById('heha_image');
+                        const video = document.getElementById('heha_video');
+                        container.style.opacity = '1';
+                        video.play();
                       }
 
                       function heha_stop() {
-                        document.getElementById('heha_image').style.opacity = '0';
+                        const container = document.getElementById('heha_image');
+                        const video = document.getElementById('heha_video');
+                        container.style.opacity = '0';
+                        video.pause();
+                        video.currentTime = 0;
                       }
                       heha_stop();
                     </script>
