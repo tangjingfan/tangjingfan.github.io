@@ -130,6 +130,65 @@
               "
             >
               <tbody>
+                <tr
+                  onmouseout="goal2pixel_stop()"
+                  onmouseover="goal2pixel_start()"
+                  bgcolor="#ffffd0"
+                >
+                  <td style="padding: 16px; width: 20%; vertical-align: middle">
+                    <div class="one" style="margin-top: 20px">
+                      <div class="two" id="goal2pixel_image">
+                        <video
+                          id="goal2pixel_video"
+                          width="100%"
+                          muted
+                          loop
+                          playsinline
+                          preload="metadata"
+                        >
+                          <source src="images/goal2pixel.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                      <video width="100%" muted loop playsinline autoplay preload="metadata">
+                        <source src="images/goal2pixel.mp4" type="video/mp4" />
+                      </video>
+                    </div>
+                    <script type="text/javascript">
+                      function goal2pixel_start() {
+                        const container = document.getElementById('goal2pixel_image');
+                        const video = document.getElementById('goal2pixel_video');
+                        container.style.opacity = '1';
+                        video.play();
+                      }
+
+                      function goal2pixel_stop() {
+                        const container = document.getElementById('goal2pixel_image');
+                        container.style.opacity = '0';
+                      }
+                      goal2pixel_stop();
+                    </script>
+                  </td>
+                  <td style="padding: 8px; width: 80%; vertical-align: middle">
+                    <a>
+                      <span class="papertitle"
+                        >Goal2Pixel: Grounding Goals to Pixels for Vision-Language Navigation</span
+                      >
+                    </a>
+                    <br />
+                    <a>Muyi Bao</a>, <a>Yuxin Cai</a>, <a>Hang Xu</a>, <a>Zongtai Li</a>,
+                    <a>Jinxi He</a>, <strong>Jingfan Tang</strong>
+                    <br />
+                    <a>Chen Lv</a>, <a>Ji Zhang</a>, <a>Yaqi Xie</a>,
+                    <a>Wenshan Wang</a>
+                    <br />
+                    <em>Paper to be released</em>
+                    <br />
+                    <a>paper to be released</a> / <a href="goal2pixel/">demo</a>
+                    <p></p>
+                    <p>Project details will be updated soon.</p>
+                  </td>
+                </tr>
+
                 <tr onmouseout="rpv_star_stop()" onmouseover="rpv_star_start()" bgcolor="#ffffd0">
                   <td style="padding: 16px; width: 20%; vertical-align: middle">
                     <div class="one" style="margin-top: 20px">
