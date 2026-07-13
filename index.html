@@ -132,7 +132,7 @@
               "
             >
               <tbody>
-                <tr onmouseout="goal2pixel_stop()" onmouseover="goal2pixel_start()">
+                <tr onmouseleave="goal2pixel_stop()" onmouseenter="goal2pixel_start()">
                   <td style="padding: 16px; width: 20%; vertical-align: middle">
                     <div class="one" style="margin-top: 20px">
                       <div class="two" id="goal2pixel_image">
@@ -147,7 +147,15 @@
                           <source src="images/goal2pixel.mp4" type="video/mp4" />
                         </video>
                       </div>
-                      <video width="100%" muted loop playsinline autoplay preload="metadata">
+                      <video
+                        id="goal2pixel_base_video"
+                        width="100%"
+                        muted
+                        loop
+                        playsinline
+                        autoplay
+                        preload="metadata"
+                      >
                         <source src="images/goal2pixel.mp4" type="video/mp4" />
                       </video>
                     </div>
@@ -155,8 +163,13 @@
                       function goal2pixel_start() {
                         const container = document.getElementById('goal2pixel_image');
                         const video = document.getElementById('goal2pixel_video');
+                        const baseVideo = document.getElementById('goal2pixel_base_video');
+
+                        if (baseVideo.readyState >= 1 && video.readyState >= 1) {
+                          video.currentTime = baseVideo.currentTime % video.duration;
+                        }
                         container.style.opacity = '1';
-                        video.play();
+                        video.play().catch(() => {});
                       }
 
                       function goal2pixel_stop() {
