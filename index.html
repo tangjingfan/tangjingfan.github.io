@@ -131,23 +131,10 @@
               "
             >
               <tbody>
-                <tr onmouseleave="goal2pixel_stop()" onmouseenter="goal2pixel_start()">
+                <tr>
                   <td style="padding: 16px; width: 20%; vertical-align: middle">
                     <div class="one" style="margin-top: 20px">
-                      <div class="two" id="goal2pixel_image">
-                        <video
-                          id="goal2pixel_video"
-                          width="100%"
-                          muted
-                          loop
-                          playsinline
-                          preload="metadata"
-                        >
-                          <source src="images/goal2pixel.mp4" type="video/mp4" />
-                        </video>
-                      </div>
                       <video
-                        id="goal2pixel_base_video"
                         width="100%"
                         muted
                         loop
@@ -158,25 +145,6 @@
                         <source src="images/goal2pixel.mp4" type="video/mp4" />
                       </video>
                     </div>
-                    <script type="text/javascript">
-                      function goal2pixel_start() {
-                        const container = document.getElementById('goal2pixel_image');
-                        const video = document.getElementById('goal2pixel_video');
-                        const baseVideo = document.getElementById('goal2pixel_base_video');
-
-                        if (baseVideo.readyState >= 1 && video.readyState >= 1) {
-                          video.currentTime = baseVideo.currentTime % video.duration;
-                        }
-                        container.style.opacity = '1';
-                        video.play().catch(() => {});
-                      }
-
-                      function goal2pixel_stop() {
-                        const container = document.getElementById('goal2pixel_image');
-                        container.style.opacity = '0';
-                      }
-                      goal2pixel_stop();
-                    </script>
                   </td>
                   <td style="padding: 8px; width: 80%; vertical-align: middle">
                     <a>
@@ -208,39 +176,13 @@
                   </td>
                 </tr>
 
-                <tr onmouseout="rpv_star_stop()" onmouseover="rpv_star_start()" bgcolor="#ffffd0">
+                <tr bgcolor="#ffffd0">
                   <td style="padding: 16px; width: 20%; vertical-align: middle">
                     <div class="one" style="margin-top: 20px">
-                      <div class="two" id="rpv_star_image">
-                        <video
-                          id="rpv_star_video"
-                          width="100%"
-                          muted
-                          loop
-                          playsinline
-                          preload="metadata"
-                        >
-                          <source src="images/rpv_star.mp4" type="video/mp4" />
-                        </video>
-                      </div>
                       <video width="100%" muted loop playsinline autoplay preload="metadata">
                         <source src="images/rpv_star.mp4" type="video/mp4" />
                       </video>
                     </div>
-                    <script type="text/javascript">
-                      function rpv_star_start() {
-                        const container = document.getElementById('rpv_star_image');
-                        const video = document.getElementById('rpv_star_video');
-                        container.style.opacity = '1';
-                        video.play();
-                      }
-
-                      function rpv_star_stop() {
-                        const container = document.getElementById('rpv_star_image');
-                        container.style.opacity = '0';
-                      }
-                      rpv_star_stop();
-                    </script>
                   </td>
                   <td style="padding: 8px; width: 80%; vertical-align: middle">
                     <a>
@@ -260,45 +202,19 @@
                     <p></p>
                     <p>
                       Introducing the Routing with Probabilistic Vertices (RPV) to model map
-                      prediction uncertainty, with efficient optimal (RPV*) and bounded suboptimal
-                      solvers (F-RPV*).
+                      prediction uncertainty during exploration, with efficient optimal (RPV*) and
+                      bounded suboptimal solvers (F-RPV*).
                     </p>
                   </td>
                 </tr>
 
-                <tr onmouseout="heha_stop()" onmouseover="heha_start()">
+                <tr>
                   <td style="padding: 16px; width: 20%; vertical-align: middle">
                     <div class="one">
-                      <div class="two" id="heha_image">
-                        <video
-                          id="heha_video"
-                          width="100%"
-                          muted
-                          loop
-                          playsinline
-                          preload="metadata"
-                        >
-                          <source src="images/heha_real.mp4" type="video/mp4" />
-                        </video>
-                      </div>
                       <video width="100%" muted loop playsinline autoplay preload="metadata">
                         <source src="images/heha_real.mp4" type="video/mp4" />
                       </video>
                     </div>
-                    <script type="text/javascript">
-                      function heha_start() {
-                        const container = document.getElementById('heha_image');
-                        const video = document.getElementById('heha_video');
-                        container.style.opacity = '1';
-                        video.play();
-                      }
-
-                      function heha_stop() {
-                        const container = document.getElementById('heha_image');
-                        container.style.opacity = '0';
-                      }
-                      heha_stop();
-                    </script>
                   </td>
                   <td style="padding: 8px; width: 80%; vertical-align: middle">
                     <a>
