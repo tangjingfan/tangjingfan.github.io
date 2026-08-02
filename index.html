@@ -96,34 +96,25 @@
                 <tr>
                   <td style="padding: 16px; width: 100%; vertical-align: middle">
                     <h2>News</h2>
-                    <div class="news-section">
-                      <div class="news-list" id="recent-news">
-                        <div class="news-item" data-month="2026-04">
-                          <time datetime="2026-04">Apr 2026</time>
-                          <p>
-                            We are organizing CMU-VLN-Challenge. Please check our
-                            <a href="https://www.ai-meets-autonomy.com/cmu-vln-challenge"
-                              >website</a
-                            >.
-                          </p>
-                        </div>
-                        <div class="news-item" data-month="2026-01">
-                          <time datetime="2026-01">Jan 2026</time>
-                          <p>Start my exchange at Carnegie Mellon University.</p>
-                        </div>
-                        <div class="news-item" data-month="2025-09">
-                          <time datetime="2025-09">Sep 2025</time>
-                          <p>
-                            Our paper HEHA is accepted to IEEE International Symposium on
-                            Multi-Robot and Multi-Agent Systems (MRS 2025) as a poster paper.
-                          </p>
-                        </div>
-                      </div>
-                      <details class="news-archive" id="news-archive" hidden>
-                        <summary>Earlier news <span id="news-archive-count"></span></summary>
-                        <div class="news-list" id="earlier-news"></div>
-                      </details>
+                    <div id="recent-news">
+                      <p class="news-item" data-month="2026-04">
+                        <strong>[Apr 2026]</strong> We are organizing CMU-VLN-Challenge. Please
+                        check our
+                        <a href="https://www.ai-meets-autonomy.com/cmu-vln-challenge">website</a>.
+                      </p>
+                      <p class="news-item" data-month="2026-01">
+                        <strong>[Jan 2026]</strong> Start my exchange at Carnegie Mellon University.
+                      </p>
+                      <p class="news-item" data-month="2025-09">
+                        <strong>[Sep 2025]</strong> Our paper HEHA is accepted to IEEE International
+                        Symposium on Multi-Robot and Multi-Agent Systems (MRS 2025) as a poster
+                        paper.
+                      </p>
                     </div>
+                    <details class="news-archive" id="news-archive" hidden>
+                      <summary>Earlier news <span id="news-archive-count"></span></summary>
+                      <div id="earlier-news"></div>
+                    </details>
                     <script>
                       (() => {
                         const now = new Date();
