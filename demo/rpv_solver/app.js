@@ -16,7 +16,7 @@ function random(seed) {
 function distance(a, b) { return Math.hypot(a.x - b.x, a.y - b.y); }
 
 // This mirrors the repository's min-sum recurrence: q' = q + c(u, v), g' = g + p(v) * q'.
-function solveMinSum(points) {
+function solve(points, objective) {
   const size = points.length;
   const costs = Array.from({ length: size }, (_, from) => points.map((to) => distance(points[from], to)));
   let bestCost = Infinity;
@@ -31,7 +31,9 @@ function solveMinSum(points) {
     for (let next = 1; next < size; next += 1) {
       if (!(remaining & (1 << next))) continue;
       const edgeCost = costs[last][next];
-      visit(next, remaining ^ (1 << next), routeCost + points[next].probability * (distanceSoFar + edgeCost), distanceSoFar + edgeCost, [...path, next]);
+      const arrivalCost = points[next].probability * (distanceSoFar + edgeCost);
+      const nextCost = objective === 'min-max' ? Math.max(routeCost, arrivalCost) : routeCost + arrivalCost;
+      visit(next, remaining ^ (1 << next), nextCost, distanceSoFar + edgeCost, [...path, next]);
     }
   }
   visit(0, ((1 << size) - 1) ^ 1, 0, 0, [0]);
@@ -72,9 +74,11 @@ function generate() {
   const nextRandom = random(Number(seedInput.value) || 0);
   const count = Number(countInput.value);
   vertices = Array.from({ length: count }, (_, index) => ({ x: .08 + nextRandom() * .84, y: .08 + nextRandom() * .84, probability: index === 0 ? 0 : .15 + nextRandom() * .85 }));
-  const result = solveMinSum(vertices);
+  const objective = document.querySelector('input[name="objective"]:checked').value;
+  const result = solve(vertices, objective);
   draw(vertices, result.path);
   document.getElementById('status').textContent = 'Solved';
+  document.getElementById('objective-value').textContent = objective === 'min-max' ? 'Min-max' : 'Min-sum';
   document.getElementById('cost').textContent = result.cost.toFixed(2);
   document.getElementById('states').textContent = result.expanded.toLocaleString();
   document.getElementById('route').textContent = result.path.join(' → ');
@@ -82,5 +86,8 @@ function generate() {
 
 countInput.addEventListener('input', () => { countOutput.value = countInput.value; });
 document.getElementById('generate').addEventListener('click', generate);
-window.addEventListener('resize', () => { if (vertices.length) draw(vertices, solveMinSum(vertices).path); });
+document.querySelectorAll('input[name="objective"]').forEach((input) => input.addEventListener('change', generate));
+window.addEventListener('resize', () => {
+  if (vertices.length) draw(vertices, solve(vertices, document.querySelector('input[name="objective"]:checked').value).path);
+});
 generate();
