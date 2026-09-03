@@ -4,6 +4,9 @@ const countInput = document.getElementById('vertex-count');
 const countOutput = document.getElementById('vertex-count-value');
 const seedInput = document.getElementById('seed');
 let vertices = [];
+let solutionPath = [];
+let requestNumber = 0;
+let activeWorker;
 
 function random(seed) {
   let value = seed >>> 0;
@@ -11,33 +14,6 @@ function random(seed) {
     value = (value * 1664525 + 1013904223) >>> 0;
     return value / 4294967296;
   };
-}
-
-function distance(a, b) { return Math.hypot(a.x - b.x, a.y - b.y); }
-
-// This mirrors the repository's min-sum recurrence: q' = q + c(u, v), g' = g + p(v) * q'.
-function solve(points, objective) {
-  const size = points.length;
-  const costs = Array.from({ length: size }, (_, from) => points.map((to) => distance(points[from], to)));
-  let bestCost = Infinity;
-  let bestPath = [];
-  let expanded = 0;
-  function visit(last, remaining, routeCost, distanceSoFar, path) {
-    expanded += 1;
-    if (!remaining) {
-      if (routeCost < bestCost) { bestCost = routeCost; bestPath = [...path]; }
-      return;
-    }
-    for (let next = 1; next < size; next += 1) {
-      if (!(remaining & (1 << next))) continue;
-      const edgeCost = costs[last][next];
-      const arrivalCost = points[next].probability * (distanceSoFar + edgeCost);
-      const nextCost = objective === 'min-max' ? Math.max(routeCost, arrivalCost) : routeCost + arrivalCost;
-      visit(next, remaining ^ (1 << next), nextCost, distanceSoFar + edgeCost, [...path, next]);
-    }
-  }
-  visit(0, ((1 << size) - 1) ^ 1, 0, 0, [0]);
-  return { path: bestPath, cost: bestCost, expanded };
 }
 
 function resizeCanvas() {
@@ -59,8 +35,10 @@ function draw(points, path) {
   const margin = 44;
   const point = (vertex) => ({ x: margin + vertex.x * (bounds.width - margin * 2), y: margin + vertex.y * (bounds.height - margin * 2) });
   context.lineCap = 'round'; context.lineJoin = 'round';
-  context.strokeStyle = '#f27d52'; context.lineWidth = 3;
-  context.beginPath(); path.forEach((index, step) => { const p = point(points[index]); if (!step) context.moveTo(p.x, p.y); else context.lineTo(p.x, p.y); }); context.stroke();
+  if (path.length) {
+    context.strokeStyle = '#f27d52'; context.lineWidth = 3;
+    context.beginPath(); path.forEach((index, step) => { const p = point(points[index]); if (!step) context.moveTo(p.x, p.y); else context.lineTo(p.x, p.y); }); context.stroke();
+  }
   points.forEach((vertex, index) => {
     const p = point(vertex); const radius = 7 + vertex.probability * 14;
     context.beginPath(); context.fillStyle = index === 0 ? '#1e2c28' : '#c7e86b'; context.arc(p.x, p.y, radius, 0, Math.PI * 2); context.fill();
@@ -70,24 +48,63 @@ function draw(points, path) {
   });
 }
 
-function generate() {
+function setResult(result, objective) {
+  solutionPath = result.path || [];
+  draw(vertices, solutionPath);
+  document.getElementById('status').textContent = result.timeout ? 'Time limit' : 'Solved';
+  document.getElementById('objective-value').textContent = objective === 'min-max' ? 'Min-max' : 'Min-sum';
+  document.getElementById('cost').textContent = Number.isFinite(result.final_cost) ? result.final_cost.toFixed(3) : '--';
+  document.getElementById('states').textContent = Number(result.n_expanded).toLocaleString();
+  document.getElementById('route').textContent = solutionPath.join(' → ') || '--';
+}
+
+async function generate() {
+  const currentRequest = ++requestNumber;
   const nextRandom = random(Number(seedInput.value) || 0);
   const count = Number(countInput.value);
-  vertices = Array.from({ length: count }, (_, index) => ({ x: .08 + nextRandom() * .84, y: .08 + nextRandom() * .84, probability: index === 0 ? 0 : .15 + nextRandom() * .85 }));
+  vertices = Array.from({ length: count }, (_, id) => ({ id, x: .08 + nextRandom() * .84, y: .08 + nextRandom() * .84, probability: .15 + nextRandom() * .85 }));
   const objective = document.querySelector('input[name="objective"]:checked').value;
-  const result = solve(vertices, objective);
-  draw(vertices, result.path);
-  document.getElementById('status').textContent = 'Solved';
+  solutionPath = [];
+  draw(vertices, solutionPath);
+  document.getElementById('status').textContent = 'Solving…';
   document.getElementById('objective-value').textContent = objective === 'min-max' ? 'Min-max' : 'Min-sum';
-  document.getElementById('cost').textContent = result.cost.toFixed(2);
-  document.getElementById('states').textContent = result.expanded.toLocaleString();
-  document.getElementById('route').textContent = result.path.join(' → ');
+  ['cost', 'states', 'route'].forEach((id) => { document.getElementById(id).textContent = '--'; });
+  const button = document.getElementById('generate');
+  button.disabled = true;
+  if (activeWorker) activeWorker.terminate();
+  activeWorker = new Worker('solver-worker.js');
+  const worker = activeWorker;
+  try {
+    const result = await new Promise((resolve, reject) => {
+      const timeout = window.setTimeout(() => {
+        worker.terminate();
+        reject(new Error('Solver exceeded the 10 second limit'));
+      }, 12000);
+      worker.addEventListener('message', ({ data }) => {
+        window.clearTimeout(timeout);
+        if (data.error) reject(new Error(data.error)); else resolve(data.result);
+      }, { once: true });
+      worker.addEventListener('error', (event) => {
+        window.clearTimeout(timeout);
+        reject(new Error(event.message || 'Unable to load the WebAssembly solver'));
+      }, { once: true });
+      worker.postMessage({ vertices, solver: objective, timeLimit: 10, start: 0, heuristic: 'pt', dominance: 'state' });
+    });
+    if (currentRequest === requestNumber) setResult(result, objective);
+  } catch (error) {
+    if (currentRequest === requestNumber) {
+      document.getElementById('status').textContent = 'Unavailable';
+      document.getElementById('route').textContent = error.message;
+    }
+  } finally {
+    worker.terminate();
+    if (activeWorker === worker) activeWorker = undefined;
+    if (currentRequest === requestNumber) button.disabled = false;
+  }
 }
 
 countInput.addEventListener('input', () => { countOutput.value = countInput.value; });
 document.getElementById('generate').addEventListener('click', generate);
 document.querySelectorAll('input[name="objective"]').forEach((input) => input.addEventListener('change', generate));
-window.addEventListener('resize', () => {
-  if (vertices.length) draw(vertices, solve(vertices, document.querySelector('input[name="objective"]:checked').value).path);
-});
+window.addEventListener('resize', () => { if (vertices.length) draw(vertices, solutionPath); });
 generate();

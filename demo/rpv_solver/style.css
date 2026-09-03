@@ -12,6 +12,7 @@ input[type=range] { width: 150px; accent-color: var(--accent); }
 output { color: var(--ink); font: 14px Manrope, sans-serif; }
 button { padding: 11px 17px; border: 0; color: #fff; background: var(--accent); cursor: pointer; font: 700 13px Manrope, sans-serif; }
 button:hover { background: #1f5745; }
+button:disabled { cursor: wait; opacity: .62; }
 .objective { display: flex; gap: 12px; align-items: center; min-height: 54px; margin: 0; padding: 8px 0; border: 0; }
 .objective legend { margin-bottom: 7px; color: var(--muted); font: 500 11px Manrope, sans-serif; }
 .objective label { display: flex; gap: 5px; align-items: center; color: var(--ink); text-transform: none; }
