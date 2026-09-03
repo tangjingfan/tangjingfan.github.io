@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RPV* Solver Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header>
+        <p class="kicker">RPV* / Interactive solver</p>
+        <h1>Routing with probabilistic vertices.</h1>
+        <p class="lede">Generate a small instance, then watch the exact min-sum route emerge from the probabilities.</p>
+      </header>
+
+      <section class="toolbar" aria-label="Solver controls">
+        <label>Vertices <input id="vertex-count" type="range" min="5" max="10" value="8" /><output id="vertex-count-value">8</output></label>
+        <label>Seed <input id="seed" type="number" min="0" max="999999" value="2026" /></label>
+        <button id="generate" type="button">Generate &amp; solve</button>
+      </section>
+
+      <section class="workspace">
+        <div class="canvas-wrap"><canvas id="map" aria-label="Generated vertices and solution path"></canvas></div>
+        <aside class="results">
+          <div class="result-heading"><span>Solution</span><strong id="status">Ready</strong></div>
+          <div class="metric"><span>Objective</span><strong id="cost">--</strong></div>
+          <div class="metric"><span>Expanded states</span><strong id="states">--</strong></div>
+          <div class="metric"><span>Route</span><strong id="route">--</strong></div>
+          <p class="note">Each vertex is sampled with a location and probability. Edge costs are Euclidean distances. The route minimizes the probability-weighted arrival cost.</p>
+          <a class="back" href="../../index.html">Back to homepage</a>
+        </aside>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
