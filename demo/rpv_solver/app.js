@@ -65,8 +65,8 @@ function draw(points, path) {
     const p = point(vertex); const radius = 7 + vertex.probability * 14;
     context.beginPath(); context.fillStyle = index === 0 ? '#1e2c28' : '#c7e86b'; context.arc(p.x, p.y, radius, 0, Math.PI * 2); context.fill();
     context.strokeStyle = index === 0 ? '#f27d52' : '#1e2c28'; context.lineWidth = 2; context.stroke();
-    context.fillStyle = index === 0 ? '#fff' : '#17231f'; context.font = '500 11px DM Mono, monospace'; context.textAlign = 'center'; context.textBaseline = 'middle'; context.fillText(index === 0 ? 'S' : index, p.x, p.y);
-    context.fillStyle = '#52645d'; context.font = '11px DM Mono, monospace'; context.fillText(`${Math.round(vertex.probability * 100)}%`, p.x, p.y + radius + 14);
+    context.fillStyle = index === 0 ? '#fff' : '#17231f'; context.font = '500 11px Manrope, sans-serif'; context.textAlign = 'center'; context.textBaseline = 'middle'; context.fillText(index === 0 ? 'S' : index, p.x, p.y);
+    context.fillStyle = '#52645d'; context.font = '11px Manrope, sans-serif'; context.fillText(`${Math.round(vertex.probability * 100)}%`, p.x, p.y + radius + 14);
   });
 }
 
