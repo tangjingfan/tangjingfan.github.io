@@ -9,7 +9,7 @@
   <body>
     <main class="shell">
       <header>
-        <h1>Routing With Probabilistic Vertices.</h1>
+        <h1>Routing With Probabilistic Vertices</h1>
       </header>
 
       <section class="toolbar" aria-label="Solver controls">
@@ -20,11 +20,11 @@
           ></label
         >
         <label>Seed <input id="seed" type="number" min="0" max="999999" value="2026" /></label>
-          <fieldset class="objective">
-            <legend>Objective</legend>
-            <label><input type="radio" name="objective" value="min-sum" checked /> Min-sum</label>
-            <label><input type="radio" name="objective" value="min-max" /> Min-max</label>
-          </fieldset>
+        <fieldset class="objective">
+          <legend>Objective</legend>
+          <label><input type="radio" name="objective" value="min-sum" checked /> Min-sum</label>
+          <label><input type="radio" name="objective" value="min-max" /> Min-max</label>
+        </fieldset>
         <button id="generate" type="button">Generate &amp; solve</button>
       </section>
 
@@ -34,7 +34,9 @@
         </div>
         <aside class="results">
           <div class="result-heading"><span>Solution</span><strong id="status">Ready</strong></div>
-          <div class="metric"><span>Objective</span><strong id="objective-value">Min-sum</strong></div>
+          <div class="metric">
+            <span>Objective</span><strong id="objective-value">Min-sum</strong>
+          </div>
           <div class="metric"><span>Cost</span><strong id="cost">--</strong></div>
           <div class="metric"><span>Expanded states</span><strong id="states">--</strong></div>
           <div class="metric"><span>Route</span><strong id="route">--</strong></div>
