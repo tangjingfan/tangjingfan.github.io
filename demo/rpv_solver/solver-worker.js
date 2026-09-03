@@ -20,7 +20,9 @@ self.addEventListener('message', async ({ data }) => {
       data.heuristic,
       data.dominance,
     );
-    self.postMessage({ result: JSON.parse(json) });
+    const result = JSON.parse(json);
+    if (result.error) self.postMessage({ error: result.error });
+    else self.postMessage({ result });
   } catch (error) {
     self.postMessage({ error: error?.message || String(error) });
   }

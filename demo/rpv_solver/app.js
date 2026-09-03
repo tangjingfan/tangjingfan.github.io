@@ -51,7 +51,7 @@ function draw(points, path) {
 function setResult(result, objective) {
   solutionPath = result.path || [];
   draw(vertices, solutionPath);
-  document.getElementById('status').textContent = result.timeout ? 'Time limit' : 'Solved';
+  document.getElementById('status').textContent = result.timeout ? 'Time limit' : result.success ? 'Solved' : 'No solution';
   document.getElementById('objective-value').textContent = objective === 'min-max' ? 'Min-max' : 'Min-sum';
   document.getElementById('cost').textContent = Number.isFinite(result.final_cost) ? result.final_cost.toFixed(3) : '--';
   document.getElementById('states').textContent = Number(result.n_expanded).toLocaleString();
