@@ -41,9 +41,11 @@
           <div class="metric"><span>Expanded states</span><strong id="states">--</strong></div>
           <div class="metric"><span>Route</span><strong id="route">--</strong></div>
           <p class="note">
-            Each vertex is sampled with a location and probability. Edge costs are Euclidean
-            distances. RPV* runs locally in your browser via WebAssembly, using the PT heuristic
-            and state dominance. No instance data leaves your device.
+            The tour starts at S, which is visited with certainty; every other vertex carries
+            the probability that it needs a visit. Sampled locations are held a minimum distance
+            apart. Edge costs are Euclidean distances. RPV* runs locally in your browser via
+            WebAssembly, using the PT heuristic and state dominance. No instance data leaves your
+            device.
           </p>
           <a class="back" href="../../index.html">Back to homepage</a>
         </aside>

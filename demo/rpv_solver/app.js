@@ -16,6 +16,28 @@ function random(seed) {
   };
 }
 
+// Vertices are kept apart so their markers stay readable and the instance is not
+// degenerate. The bound loosens as the count drops, and after MAX_ATTEMPTS tries
+// the most isolated candidate wins, so a crowded draw settles instead of hanging.
+const MAX_ATTEMPTS = 240;
+
+function samplePositions(count, nextRandom) {
+  const separation = 0.60 / Math.sqrt(count);
+  const points = [];
+  for (let index = 0; index < count; index += 1) {
+    let chosen;
+    let bestClearance = -1;
+    for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt += 1) {
+      const candidate = { x: .08 + nextRandom() * .84, y: .08 + nextRandom() * .84 };
+      const clearance = points.reduce((least, point) => Math.min(least, Math.hypot(point.x - candidate.x, point.y - candidate.y)), Infinity);
+      if (clearance >= separation) { chosen = candidate; break; }
+      if (clearance > bestClearance) { bestClearance = clearance; chosen = candidate; }
+    }
+    points.push(chosen);
+  }
+  return points;
+}
+
 function resizeCanvas() {
   const scale = window.devicePixelRatio || 1;
   const bounds = canvas.getBoundingClientRect();
@@ -62,7 +84,8 @@ async function generate() {
   const currentRequest = ++requestNumber;
   const nextRandom = random(Number(seedInput.value) || 0);
   const count = Number(countInput.value);
-  vertices = Array.from({ length: count }, (_, id) => ({ id, x: .08 + nextRandom() * .84, y: .08 + nextRandom() * .84, probability: .15 + nextRandom() * .85 }));
+  // The tour starts at vertex 0, so that one is visited with certainty.
+  vertices = samplePositions(count, nextRandom).map((point, id) => ({ id, x: point.x, y: point.y, probability: id === 0 ? 1 : .15 + nextRandom() * .85 }));
   const objective = document.querySelector('input[name="objective"]:checked').value;
   solutionPath = [];
   draw(vertices, solutionPath);
